@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="DiscoverNasaBETA.TestPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DiscoverNasaBETA"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBox Width="300" PlaceholderText="url" Name="Url_box" />
+        <Button Name="downloadCtn" Content="download" Click="downloadCtn_Click" HorizontalAlignment="Stretch"/>
+        <TextBlock Name="status" Text="nothing yet!" FontSize="20"/>
+        <TextBox Name="FileName" PlaceholderText="file name"/>
+        <TextBox Name="data" PlaceholderText="data"/>
+        <Button Name="saveDownload" Content="save downloaded data" Click="saveDownload_Click" HorizontalAlignment="Stretch"/>
+        <Button Name="retrieveBtn" Content="retrieve" HorizontalAlignment="Stretch" Click="retrieveBtn_Click"/>
+        <TextBlock Name="resultBox" Text="the result" HorizontalAlignment="Center" TextWrapping="Wrap"/>
+    </StackPanel>
+</Page>
