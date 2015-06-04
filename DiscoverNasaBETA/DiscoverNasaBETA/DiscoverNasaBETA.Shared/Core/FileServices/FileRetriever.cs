@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DiscoverNasaBETA.Core.Interfaces;
 using Windows.Storage;
+using System.IO;
 
 namespace DiscoverNasaBETA.Core.FileSerivces
 {
@@ -13,9 +14,18 @@ namespace DiscoverNasaBETA.Core.FileSerivces
         {
             // throw new NotImplementedException();
             var _folder = ApplicationData.Current.LocalFolder;
-            var _file = await _folder.GetFileAsync(fileName);
+            try
+            {
+              var _file = await _folder.GetFileAsync(fileName);
+                return _file;
+            }
+            catch (FileNotFoundException)
+            {
+                //notify user about the excption.
+            }
+
                
-            return _file;
+            return null;
         }
 
         public StorageFile GetFile( Uri uri, StorageFolder folder )
