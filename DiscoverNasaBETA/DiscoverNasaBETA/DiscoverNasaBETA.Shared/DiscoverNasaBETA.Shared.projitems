@@ -17,9 +17,11 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Core\FileServices\FileRetriever.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\FileServices\FileSaver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IDownloadClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IFileRetriever.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IFileSaver.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IJsonDesrializer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IJsonSerializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\WebServices\DownloadClient.cs" />
   </ItemGroup>
 </Project>
