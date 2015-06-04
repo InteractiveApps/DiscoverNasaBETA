@@ -15,8 +15,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Core\" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IFileRetriever.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IFileSaver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IJsonDesrializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IJsonSerializer.cs" />
   </ItemGroup>
 </Project>
