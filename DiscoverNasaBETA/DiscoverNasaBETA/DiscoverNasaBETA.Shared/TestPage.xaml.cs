@@ -27,6 +27,7 @@ namespace DiscoverNasaBETA
     public sealed partial class TestPage : Page
     {
         public string downloadData { get; set; }
+
         public TestPage()
         {
             downloadData=string.Empty;

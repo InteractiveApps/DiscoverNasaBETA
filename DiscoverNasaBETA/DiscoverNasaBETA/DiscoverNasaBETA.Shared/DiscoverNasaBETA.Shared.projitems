@@ -17,11 +17,13 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Core\FileServices\FileRetriever.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\FileServices\FileSaver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IDifferenceList.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IDownloadClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IFileRetriever.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IFileSaver.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IJsonDesrializer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IJsonSerializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\ListManipulations\DifferenceListGen.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\WebServices\DownloadClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)TestPage.xaml.cs">
       <DependentUpon>TestPage.xaml</DependentUpon>
