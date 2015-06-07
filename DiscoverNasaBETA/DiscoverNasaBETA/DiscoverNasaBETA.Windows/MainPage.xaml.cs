@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using DiscoverNasaBETA.Core.ApiServices;
+using DiscoverNasaBETA.Core.NasaApis;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -33,12 +34,28 @@ namespace DiscoverNasaBETA
         {
             this.InitializeComponent();
         }
-        protected override void OnNavigatedTo( NavigationEventArgs e )
+        protected override async void OnNavigatedTo( NavigationEventArgs e )
         {
             base.OnNavigatedTo(e);
+
             dClient=new DownloadClient();
-            urlService=new ApiUrlService("https://api.nasa.gov/planetary/apod?");
-            var api = urlService.getUrl("concept_tags;api_key;date", "concept_tags;api_key;date");
+
+            ApodUrlGenerator apod_url_gen = new ApodUrlGenerator();
+            var url = apod_url_gen.GetUrl();
+
+            string json = await dClient.DownloadString(url);
+            
+                          
+
         }
+    }
+
+    public class Apod_RootObject
+    {
+        public string url { get; set; }
+        public string media_type { get; set; }
+        public string explanation { get; set; }
+        public List<object> concepts { get; set; }
+        public string title { get; set; }
     }
 }

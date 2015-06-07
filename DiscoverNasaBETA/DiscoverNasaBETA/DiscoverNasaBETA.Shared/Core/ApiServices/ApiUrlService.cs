@@ -12,6 +12,7 @@ namespace DiscoverNasaBETA.Core.ApiServices
         {
             BaseUri=baseUri;
         }
+
         public string GetFormattedApiUrl(string parameters)
         {
             string[ ] _paramArray = parameters.Split(';');
@@ -26,7 +27,7 @@ namespace DiscoverNasaBETA.Core.ApiServices
             return BaseUri+sub;
         }
 
-        public string getUrl(string parameters , string values)
+        public string GetUrl(string parameters , string values)
         {
             var formattableString = GetFormattedApiUrl(parameters);
             string[ ] valArray = values.Split(';');

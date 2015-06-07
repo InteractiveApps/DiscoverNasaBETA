@@ -24,6 +24,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IFileSaver.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IJsonDesrializer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IJsonSerializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\NasaApis\ApodUrlGenerator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\WebServices\DownloadClient.cs" />
   </ItemGroup>
 </Project>
