@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using DiscoverNasaBETA.Core.ApiServices;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -26,6 +27,7 @@ namespace DiscoverNasaBETA
     {
 
         IDownloadClient dClient { get; set; }
+        ApiUrlService urlService { get; set; }
 
         public MainPage()
         {
@@ -35,6 +37,8 @@ namespace DiscoverNasaBETA
         {
             base.OnNavigatedTo(e);
             dClient=new DownloadClient();
+            urlService=new ApiUrlService("https://api.nasa.gov/planetary/apod?");
+            var api = urlService.getUrl("concept_tags;api_key;date", "concept_tags;api_key;date");
         }
     }
 }
