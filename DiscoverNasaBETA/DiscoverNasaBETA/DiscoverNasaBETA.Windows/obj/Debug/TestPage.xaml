@@ -9,12 +9,13 @@
 
     <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Center" VerticalAlignment="Center">
         <TextBox Width="300" PlaceholderText="url" Name="Url_box" />
-        <Button Name="downloadCtn" Content="download" Click="downloadCtn_Click" HorizontalAlignment="Stretch"/>
+        <Button x:ConnectionId='1' Name="downloadCtn" Content="download"                           HorizontalAlignment="Stretch"/>
         <TextBlock Name="status" Text="nothing yet!" FontSize="20"/>
         <TextBox Name="FileName" PlaceholderText="file name"/>
         <TextBox Name="data" PlaceholderText="data"/>
-        <Button Name="saveDownload" Content="save downloaded data" Click="saveDownload_Click" HorizontalAlignment="Stretch"/>
-        <Button Name="retrieveBtn" Content="retrieve" HorizontalAlignment="Stretch" Click="retrieveBtn_Click"/>
+        <Button x:ConnectionId='2' Name="saveDownload" Content="save downloaded data"                            HorizontalAlignment="Stretch"/>
+        <Button x:ConnectionId='3' Name="retrieveBtn" Content="retrieve" HorizontalAlignment="Stretch"                          />
         <TextBlock Name="resultBox" Text="the result" HorizontalAlignment="Center" TextWrapping="Wrap"/>
     </StackPanel>
 </Page>
+
