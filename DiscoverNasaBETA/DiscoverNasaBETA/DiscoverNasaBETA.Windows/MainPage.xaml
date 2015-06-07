@@ -10,7 +10,7 @@
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
         <Hub Name="mainHub">
-            
+
             <Hub.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -22,11 +22,28 @@
             <HubSection Name="apodHubSection" Header="Picture of the day">
 
                 <DataTemplate>
-                    
-                    <Image Source="{Binding}"/>
-                    
+                    <ScrollViewer Width="800" VerticalScrollBarVisibility="Hidden">
+                        <Grid>
+
+                            <Image Source="{Binding url}" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                            <Grid>
+                                <Grid.Background>
+                                    <LinearGradientBrush>
+                                        <GradientStopCollection>
+                                            <GradientStop Offset="0.0 " Color="Transparent"/>
+                                            <GradientStop Offset="0.7" Color="Transparent"/>
+                                            <GradientStop Offset="1.0" Color="Black"/>
+                                        </GradientStopCollection>
+                                    </LinearGradientBrush>
+                                </Grid.Background>
+                                <TextBlock Text="{Binding explanation}" TextWrapping="Wrap"
+                                   VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                       TextAlignment="Justify"/>
+                            </Grid>
+                        </Grid>
+                    </ScrollViewer>
                 </DataTemplate>
-                
+
             </HubSection>
 
         </Hub>

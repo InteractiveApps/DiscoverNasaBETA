@@ -16,6 +16,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using DiscoverNasaBETA.Core.ApiServices;
 using DiscoverNasaBETA.Core.NasaApis;
+using Newtonsoft.Json;
+using DiscoverNasaBETA.Models;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -43,19 +45,21 @@ namespace DiscoverNasaBETA
             ApodUrlGenerator apod_url_gen = new ApodUrlGenerator();
             var url = apod_url_gen.GetUrl();
 
-            string json = await dClient.DownloadString(url);
-            
-                          
+            ApiUrlService s = new ApiUrlService("https://api.nasa.gov/planetary/earth/imagery?");
+            var imagery_uri = s.GetUrl("lat;lon;date;cloud_source;api_key", "1.5;100.2;2013-08-09;true;I3pA7RdSKvrER6hm6f51BhWzCmoJM6Alq6BjbbEu");
 
+            ApiUrlService se = new ApiUrlService("https://api.nasa.gov/planetary/earth/assets?");
+            var imagery_uriasd = s.GetUrl("lat;lon;date;cloud_source;api_key", "1.5;100.2;2013-08-09;true;I3pA7RdSKvrER6hm6f51BhWzCmoJM6Alq6BjbbEu");
+
+
+            string json = await dClient.DownloadString(url);
+
+            Apod_RootObject root = JsonConvert.DeserializeObject<Apod_RootObject>(json);
+
+            apodHubSection.DataContext=root;
         }
     }
 
-    public class Apod_RootObject
-    {
-        public string url { get; set; }
-        public string media_type { get; set; }
-        public string explanation { get; set; }
-        public List<object> concepts { get; set; }
-        public string title { get; set; }
-    }
+   
+
 }
