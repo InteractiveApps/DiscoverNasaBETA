@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DiscoverNasaBETA.Core.Interfaces;
+using DiscoverNasaBETA.Core.WebServices;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +24,17 @@ namespace DiscoverNasaBETA
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
+        IDownloadClient dClient { get; set; }
+
         public MainPage()
         {
             this.InitializeComponent();
+        }
+        protected override void OnNavigatedTo( NavigationEventArgs e )
+        {
+            base.OnNavigatedTo(e);
+            dClient=new DownloadClient();
         }
     }
 }
