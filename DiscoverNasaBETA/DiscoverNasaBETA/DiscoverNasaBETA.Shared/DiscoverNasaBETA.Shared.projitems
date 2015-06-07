@@ -16,6 +16,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Caching Test\VM.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\ApiServices\ApiUrlService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\FileServices\FileRetriever.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\FileServices\FileSaver.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Interfaces\IDownloadClient.cs" />
