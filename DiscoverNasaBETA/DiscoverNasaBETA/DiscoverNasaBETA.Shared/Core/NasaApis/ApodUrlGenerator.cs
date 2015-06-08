@@ -39,7 +39,7 @@ namespace DiscoverNasaBETA.Core.NasaApis
             apod_values=apiKey+";"+"true"+";"+currentDate;
         } 
 
-        public string GetUrl()
+        public string GetDefaultUrl()
         {
             return GetUrl(apod_params, apod_values);
         }

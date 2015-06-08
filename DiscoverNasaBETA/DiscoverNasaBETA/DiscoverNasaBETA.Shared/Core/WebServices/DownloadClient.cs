@@ -24,13 +24,21 @@ namespace DiscoverNasaBETA.Core.WebServices
         public async Task<string> DownloadString( string uri )
         {
             //throw new NotImplementedException();
-
-            using (HttpClient client = new HttpClient())
+            string result = string.Empty;
+            try
             {
-                return await client.GetStringAsync(uri);
+                using (HttpClient client = new HttpClient())
+                {
+                    result =  await client.GetStringAsync(uri);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
             }
 
-            return null;
+            return result;
         }
     }
 }

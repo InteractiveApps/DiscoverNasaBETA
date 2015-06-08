@@ -7,40 +7,48 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <Page.Resources>
+        <Style x:Name="CustomNasaFontFamily" TargetType="TextBlock">
+
+            <Setter Property="FontFamily" Value="DiscoverNasaBETA.Shared\Fonts\Nasa.ttf"/>
+        </Style>
+    </Page.Resources>
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
         <Hub Name="mainHub">
 
+            <Hub.Background>
+                <ImageBrush ImageSource="{Binding url}"/>
+            </Hub.Background>
+
             <Hub.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Discover NASA"/>
+                        <TextBlock Text="Discover NASA" FontFamily="DiscoverNasaBETA.Shared\Fonts\Nasa.ttf#Nasa"/>
                     </StackPanel>
                 </DataTemplate>
             </Hub.HeaderTemplate>
 
             <HubSection Name="apodHubSection" Header="Picture of the day">
 
+                <HubSection.Background>
+                    <ImageBrush ImageSource="{Binding url}"/>
+                </HubSection.Background>
+
                 <DataTemplate>
                     <ScrollViewer Width="800" VerticalScrollBarVisibility="Hidden">
-                        <Grid>
-
-                            <Image Source="{Binding url}" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                            <Grid>
-                                <Grid.Background>
-                                    <LinearGradientBrush>
-                                        <GradientStopCollection>
-                                            <GradientStop Offset="0.0 " Color="Transparent"/>
-                                            <GradientStop Offset="0.7" Color="Transparent"/>
-                                            <GradientStop Offset="1.0" Color="Black"/>
-                                        </GradientStopCollection>
-                                    </LinearGradientBrush>
-                                </Grid.Background>
-                                <TextBlock Text="{Binding explanation}" TextWrapping="Wrap"
+                        <StackPanel>
+                            <TextBlock Text="{Binding title}" 
+                                       FontSize="35"
+                                       TextWrapping="Wrap"/>
+                            <TextBlock Text="{Binding explanation}" TextWrapping="Wrap"
                                    VerticalAlignment="Bottom" HorizontalAlignment="Left"
-                                       TextAlignment="Justify"/>
-                            </Grid>
-                        </Grid>
+                                       TextAlignment="Justify" FontSize="20"/>
+
+                            <TextBlock Text="{Binding concepts_string}"/>
+
+                        </StackPanel>
                     </ScrollViewer>
                 </DataTemplate>
 

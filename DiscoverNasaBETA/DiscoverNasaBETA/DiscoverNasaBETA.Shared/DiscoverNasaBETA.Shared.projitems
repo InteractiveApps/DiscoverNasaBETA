@@ -28,4 +28,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\WebServices\DownloadClient.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\SingleCoreModel.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Fonts\Nasa.ttf" />
+  </ItemGroup>
 </Project>

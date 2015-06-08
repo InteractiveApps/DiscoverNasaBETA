@@ -11,6 +11,22 @@ namespace DiscoverNasaBETA.Models
         public string explanation { get; set; }
         public List<string> concepts { get; set; }
         public string title { get; set; }
+        public string concepts_string
+        {
+            get
+            {
+                var result = string.Empty;
+                foreach (var item in concepts)
+                {
+                    result+="#"+item+"  ";
+                }
+                if (result!=string.Empty)
+                {
+                    result =  result.Insert(0, "Concept Tags: ");
+                }
+                return result;
+            }
+        }
     }
 
     public class Sounds_Result
