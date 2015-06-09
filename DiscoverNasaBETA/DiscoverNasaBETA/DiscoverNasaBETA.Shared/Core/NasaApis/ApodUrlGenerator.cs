@@ -13,7 +13,12 @@ namespace DiscoverNasaBETA.Core.NasaApis
         {
             get
             {
-                var date = DateTime.UtcNow; ;
+                TimeZoneInfo info = TimeZoneInfo.Local;
+                var x = (DateTime.Now-TimeZoneInfo.Local.BaseUtcOffset);
+                var date = (TimeZoneInfo.Local.BaseUtcOffset.Hours>0) ? (DateTime.Now-TimeZoneInfo.Local.BaseUtcOffset - new TimeSpan(5,0,0))
+                    : (DateTime.Now + TimeZoneInfo.Local.BaseUtcOffset + new TimeSpan(5,0,0)); 
+                //var date = DateTime.UtcNow;
+
 
                 var year = date.Year.ToString();
                 var month = date.Month.ToString();

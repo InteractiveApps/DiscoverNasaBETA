@@ -49,8 +49,12 @@ namespace DiscoverNasaBETA
             string json = await  dClient.DownloadString(url);
             Apod_RootObject root = JsonConvert.DeserializeObject<Apod_RootObject>(json);
 
+            ApiUrlService ser = new ApiUrlService("https://api.nasa.gov/planetary/earth/imagery?");
+            var uri = ser.GetUrl("lat;lon;cloud_source;api_key", "10.0;10.0;false;I3pA7RdSKvrER6hm6f51BhWzCmoJM6Alq6BjbbEu");
+            json = await dClient.DownloadString(uri);
+            
             apodHubSection.DataContext=root;
-
+            imagerSection.DataContext=JsonConvert.DeserializeObject<Imagery_RootObject>(json);
         }
     }
 

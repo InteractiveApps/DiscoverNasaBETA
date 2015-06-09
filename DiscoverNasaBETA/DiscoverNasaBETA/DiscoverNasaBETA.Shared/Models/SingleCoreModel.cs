@@ -66,5 +66,6 @@ namespace DiscoverNasaBETA.Models
         public string url { get; set; }
         public double cloud_score { get; set; }
         public string id { get; set; }
+        public string CS { get { return cloud_score.ToString(); } }
     }
 }

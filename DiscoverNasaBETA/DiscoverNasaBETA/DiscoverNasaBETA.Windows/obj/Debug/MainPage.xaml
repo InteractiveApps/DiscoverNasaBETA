@@ -54,6 +54,24 @@
 
             </HubSection>
 
+            <HubSection Name="imagerSection"
+                        Header="Imagery">
+                <DataTemplate>
+                    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                        <Border BorderBrush="Gray" BorderThickness="2">
+                            <StackPanel>
+
+                                <Image Source="{Binding url}"/>
+                                <TextBlock Text="{Binding date}"/>
+                                <TextBlock Text="{Binding CS}"/>
+                                <TextBlock Text="{Binding id}"/>
+
+                            </StackPanel>
+                        </Border>
+                    </ScrollViewer>
+                </DataTemplate>
+            </HubSection>
+
         </Hub>
     </Grid>
 </Page>
