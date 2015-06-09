@@ -54,8 +54,7 @@
 
             </HubSection>
 
-            <HubSection Name="imagerSection"
-                        Header="Imagery">
+            <HubSection Name="imagerSection" Header="Imagery">
                 <DataTemplate>
                     <ScrollViewer VerticalScrollBarVisibility="Hidden">
                         <Border BorderBrush="Gray" BorderThickness="2">
@@ -72,6 +71,10 @@
                 </DataTemplate>
             </HubSection>
 
+            <HubSection Name="assetsSections" Header="Extended imagery">
+                
+            </HubSection>
+            
         </Hub>
     </Grid>
 </Page>
